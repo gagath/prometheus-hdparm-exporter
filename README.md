@@ -16,6 +16,9 @@ and parses the status of each SATA disk `/dev/sd*` reported by `lsblk`.
 
 ![Example grafana output graph](./docs/granafa_hdparm.png)
 
+The above shows disks in a ZFS pool going back online after trying to access
+the filesystem.
+
 This way we can ensure that power consumption is reduced when the disks are
 shut down while not in use.
 
