@@ -61,7 +61,8 @@ distributed on hosts manually after renaming it to
 ## Grafana configuration
 
 You will need to do a bit of transformations of the `hdparm_disk_power_status`
-field in Granafa to obtain this *State timeline* output:
+field in Granafa to obtain the *State timeline* output showed in the
+introduction:
 
 ![Grafana transform data configuration: first grouping to matrix on disk
 column, then convert field type Time\\disk to Time](./docs/granafa_transform.png)
@@ -71,6 +72,10 @@ column, then convert field type Time\\disk to Time](./docs/granafa_transform.png
 The server will reply for any URL, not only `/metrics`. This is because this is
 the only thing the server do and there is no point in parsing the query url to
 match it.
+
+The server will run `lsblk` and `hdparm -C` on every request. This may DDoS
+your machine if an attacker spams the server. Always make sure to allow access
+to this HTTP server only for authorized users.
 
 ## License
 
