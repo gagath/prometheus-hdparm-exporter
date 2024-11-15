@@ -10,7 +10,7 @@ prometheus-hdparm-exporter is a zero-dependency Python program that will export
 the power state of the SATA disks found on the host and expose them to an HTTP
 endpoint for consumption by [Prometheus](https://prometheus.io/).
 
-It mon+tors if the disks are correctly shut down according to scheduled time in
+It monitors if the disks are correctly shut down according to scheduled time in
 the disk or manual calls to `hdparm -y`. It calls `hdparm -C` on every request
 and parses the status of each SATA disk `/dev/sd*` reported by `lsblk`.
 
