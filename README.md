@@ -23,7 +23,7 @@ shut down while not in use.
 ## Usage
 
 ```text
-prometheus-hdparm-exoprter HOST PORT
+prometheus-hdparm-exporter HOST PORT
 ```
 
 ## Example
