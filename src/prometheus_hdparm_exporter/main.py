@@ -53,7 +53,7 @@ def format_prometheus_disk_power_status(power_status: Tuple[str, str]) -> str:
 
 
 def print_failed_process(process):
-    print(f"Error running process", process.args)
+    print("Error running process", process.args)
     print("=== stdout ===")
     print(process.stdout.decode("utf-8"))
     print("=== stderr ===")
