@@ -64,7 +64,7 @@ You will need to do a bit of transformations of the `hdparm_disk_power_status`
 field in Granafa to obtain this *State timeline* output:
 
 ![Grafana transform data configuration: first grouping to matrix on disk
-column, then convert field type Time\\disk to Time](./docs/granafa_hdparm.png)
+column, then convert field type Time\\disk to Time](./docs/granafa_transform.png)
 
 ## Known limitations
 
