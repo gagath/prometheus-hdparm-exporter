@@ -117,6 +117,7 @@ def disks_status(disks: list[str]) -> list[Tuple[str, str]]:
 
 # Main WSGI function
 
+
 def application(_, start_response) -> list[bytes]:
     response = ""
 
@@ -134,6 +135,7 @@ def application(_, start_response) -> list[bytes]:
 
 # If run as main, start the builtin Python WSGI server to serve the app.
 
+
 def main():
     if len(sys.argv) != 3:
         print(f"usage: {sys.argv[0]} HOST PORT", file=sys.stderr)
@@ -144,6 +146,7 @@ def main():
     with make_server(host, port, application) as httpd:
         print("Serving HTTP on port 8000...")
         httpd.serve_forever()
+
 
 if __name__ == "__main__":
     main()
