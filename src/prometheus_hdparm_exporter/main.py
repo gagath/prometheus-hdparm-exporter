@@ -15,7 +15,7 @@ TEXT_HEADERS = [("Content-Type", "text/plain; charset=utf-8")]
 
 
 def utf8(*lines: str) -> list[bytes]:
-    return [l.encode("utf-8") + b"\n" for l in lines]
+    return [line.encode("utf-8") + b"\n" for line in lines]
 
 
 def parse_hdparm_output(text: str) -> list[Tuple[str, str]]:
