@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2024 Agathe Porte <microjoe@microjoe.org>
+#
+# SPDX-License-Identifier: GPL-3.0-only
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prometheus-hdparm-exporter"
+version = "1.0"
+requires-python = ">= 3.12"
+
+[project.scripts]
+spam-cli = "prometheus_hdparm_exporter:main_cli"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = [
+  "src"
+]
