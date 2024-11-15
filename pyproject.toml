@@ -12,7 +12,10 @@ version = "1.0"
 requires-python = ">= 3.12"
 
 [project.scripts]
-spam-cli = "prometheus_hdparm_exporter:main_cli"
+prometheus-hdparm-exporter = "prometheus_hdparm_exporter.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/prometheus_hdparm_exporter"]
 
 [tool.pytest.ini_options]
 addopts = [

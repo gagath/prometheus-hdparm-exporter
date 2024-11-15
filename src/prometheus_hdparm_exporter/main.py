@@ -134,13 +134,16 @@ def application(_, start_response) -> list[bytes]:
 
 # If run as main, start the builtin Python WSGI server to serve the app.
 
-if __name__ == "__main__":
-
+def main():
     if len(sys.argv) != 3:
         print(f"usage: {sys.argv[0]} HOST PORT", file=sys.stderr)
         sys.exit(2)
 
     host, port = (sys.argv[1], int(sys.argv[2]))
+
     with make_server(host, port, application) as httpd:
         print("Serving HTTP on port 8000...")
         httpd.serve_forever()
+
+if __name__ == "__main__":
+    main()
