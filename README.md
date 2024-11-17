@@ -36,7 +36,7 @@ hdparm_disk_power_status{disk="/dev/sda",status="standby"}
 hdparm_disk_power_status{disk="/dev/sdb",status="standby"}
 hdparm_disk_power_status{disk="/dev/sdc",status="standby"}
 hdparm_disk_power_status{disk="/dev/sdd",status="active/idle"}
-127.0.0.1 - - [14/Nov/2024 21:38:42] "GET / HTTP/1.1" 200 236
+127.0.0.1 - - [14/Nov/2024 21:38:42] "GET /metrics HTTP/1.1" 200 236
 ```
 
 Status values:
