@@ -13,6 +13,9 @@ endpoint for consumption by [Prometheus](https://prometheus.io/).
 It monitors if the disks are correctly shut down according to scheduled time in
 the disk or manual calls to `hdparm -y`. It calls `hdparm -C` on every request
 and parses the status of each SATA disk `/dev/sd*` reported by `lsblk`.
+The program limits queries on SATA disks because NVME SSDs and other disk
+types will often response with an `unknown` status to the `hdparm -C` command.
+
 This way we can monitor disk spin status to be sure that the spin policy works
 correctly: energy is saved and noise is reduced when not in use, and disks
 do not spin up and down too often to prevent wear.
@@ -44,6 +47,7 @@ Status values:
 
 - `active/idle` means the disk is spinning
 - `standby` means the disk is not spinning
+- `unknown` means the disk did not report anything useful
 
 The last line is the log line coming from the server’s stdout in the
 background; it is not present in the HTTP response.
