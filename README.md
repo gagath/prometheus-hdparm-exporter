@@ -43,14 +43,14 @@ hdparm_disk_power_status{disk="/dev/sdd",status="active/idle"}
 127.0.0.1 - - [14/Nov/2024 21:38:42] "GET /metrics HTTP/1.1" 200 236
 ```
 
+The last line is the log line coming from the server’s stdout in the
+background; it is not present in the HTTP response.
+
 Status values:
 
 - `active/idle` means the disk is spinning
 - `standby` means the disk is not spinning
 - `unknown` means the disk did not report anything useful
-
-The last line is the log line coming from the server’s stdout in the
-background; it is not present in the HTTP response.
 
 ## Deployment
 
