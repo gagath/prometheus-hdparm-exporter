@@ -33,7 +33,7 @@ prometheus-hdparm-exporter HOST PORT
 
 ## Example
 
-```console
+```
 $ sudo prometheus-hdparm-exporter localhost 8000 &
 $ curl localhost:8000/metrics
 hdparm_disk_power_status{disk="/dev/sda",status="standby"}
@@ -66,9 +66,12 @@ pip install git+https://github.com/gagath/prometheus-hdparm-exporter
 ### Manual
 
 Alternatively, if you do not want to use a Python package manager, the code
-fits a single file `./src/prometheus_hdparm_exporter/main.py` and can easily be
-distributed on hosts manually after renaming it to
-`prometheus_hdparm_exporter.py` for example.
+fits a single file `main.py` and can easily be distributed on hosts manually:
+
+```
+curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/heads/main/src/prometheus_hdparm_exporter/main.py \
+    -o prometheus_hdparm_exporter.py
+```
 
 ## Grafana configuration
 
