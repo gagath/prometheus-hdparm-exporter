@@ -52,12 +52,18 @@ Status values:
 - `standby` means the disk is not spinning
 - `unknown` means the disk did not report anything useful
 
-## Deployment
+## Install
+
+### Using pip
 
 This repository is a full Python package. It will create the
-`prometheus-hdparm-exporter` binary in the PATH upon install.
+`prometheus-hdparm-exporter` binary in the PATH upon install:
 
-## Manual deployment
+```
+pip install git+https://github.com/gagath/prometheus-hdparm-exporter
+```
+
+### Manual
 
 Alternatively, if you do not want to use a Python package manager, the code
 fits a single file `./src/prometheus_hdparm_exporter/main.py` and can easily be
