@@ -13,8 +13,9 @@ endpoint for consumption by [Prometheus](https://prometheus.io/).
 It monitors if the disks are correctly shut down according to scheduled time in
 the disk or manual calls to `hdparm -y`. It calls `hdparm -C` on every request
 and parses the status of each SATA disk `/dev/sd*` reported by `lsblk`.
-This way we can ensure that power consumption is reduced when the disks are
-shut down while not in use.
+This way we can monitor disk spin status to be sure that the spin policy works
+correctly: energy is saved and noise is reduced when not in use, and disks
+do not spin up and down too often to prevent wear.
 
 ![Example grafana output graph](./docs/granafa_hdparm.png)
 
