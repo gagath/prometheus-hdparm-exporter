@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-only
 
+from datetime import datetime
+
 from prometheus_hdparm_exporter import main
 
 
@@ -29,11 +31,20 @@ def test_parse_hdparm_output():
 
 
 def test_format_prometheus_disk_power_status():
+    epoch = datetime.fromtimestamp(42, None)
+
     assert (
-        main.format_prometheus_disk_power_status(("/dev/sda", "standby"))
-        == 'hdparm_disk_power_status{disk="/dev/sda",status="standby"}'
+        main.format_prometheus_disk_power_status(
+            ("/dev/sda", "standby"),
+            epoch,
+        )
+        == 'hdparm_disk_power_status{disk="/dev/sda",status="standby"} 1 42'
     )
+
     assert (
-        main.format_prometheus_disk_power_status(("/dev/sda", "active/idle"))
-        == 'hdparm_disk_power_status{disk="/dev/sda",status="active/idle"}'
+        main.format_prometheus_disk_power_status(
+            ("/dev/sda", "active/idle"),
+            epoch,
+        )
+        == 'hdparm_disk_power_status{disk="/dev/sda",status="active/idle"} 1 42'
     )

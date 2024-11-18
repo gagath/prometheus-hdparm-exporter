@@ -5,6 +5,7 @@
 import re
 import subprocess
 import sys
+from datetime import datetime
 from typing import Tuple
 from wsgiref.simple_server import make_server
 
@@ -43,10 +44,20 @@ def parse_hdparm_output(text: str) -> list[Tuple[str, str]]:
     return out
 
 
-def format_prometheus_disk_power_status(power_status: Tuple[str, str]) -> str:
+def format_prometheus_disk_power_status(
+    power_status: Tuple[str, str], time: datetime = datetime.now()
+) -> str:
     """Format disk status to Prometheus line."""
     disk, status = power_status
-    return f'hdparm_disk_power_status{{disk="{disk}",status="{status}"}}'
+    timestamp = int(time.timestamp())
+    return (
+        "hdparm_disk_power_status{"
+        f'disk="{disk}",'
+        f'status="{status}"'
+        "} "
+        "1 "  # Default value, this metric uses labels
+        f"{timestamp}"
+    )
 
 
 # Error handling functions

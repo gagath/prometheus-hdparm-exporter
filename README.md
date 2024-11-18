@@ -36,10 +36,10 @@ prometheus-hdparm-exporter HOST PORT
 ```
 $ sudo prometheus-hdparm-exporter localhost 8000 &
 $ curl localhost:8000/metrics
-hdparm_disk_power_status{disk="/dev/sda",status="standby"}
-hdparm_disk_power_status{disk="/dev/sdb",status="standby"}
-hdparm_disk_power_status{disk="/dev/sdc",status="standby"}
-hdparm_disk_power_status{disk="/dev/sdd",status="active/idle"}
+hdparm_disk_power_status{disk="/dev/sda",status="standby"} 1 1731616722
+hdparm_disk_power_status{disk="/dev/sdb",status="standby"} 1 1731616722
+hdparm_disk_power_status{disk="/dev/sdc",status="standby"} 1 1731616722
+hdparm_disk_power_status{disk="/dev/sdd",status="active/idle"} 1 1731616722
 127.0.0.1 - - [14/Nov/2024 21:38:42] "GET /metrics HTTP/1.1" 200 236
 ```
 
