@@ -160,7 +160,7 @@ def main():
     host, port = (sys.argv[1], int(sys.argv[2]))
 
     with make_server(host, port, application) as httpd:
-        print("Serving HTTP on port 8000...")
+        print(f"Serving HTTP on {host} port {port}...")
         httpd.serve_forever()
 
 
