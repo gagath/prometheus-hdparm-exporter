@@ -62,6 +62,13 @@ curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/he
     -o /opt/prometheus_hdparm_exporter.py
 ```
 
+If you want to install the systemd service:
+
+```
+curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/heads/main/systemd/prometheus-hdparm-exporter.service \
+    -o /etc/systemd/system/prometheus-hdparm-exporter.service
+```
+
 If you want to install the AppArmor configuration:
 
 ```

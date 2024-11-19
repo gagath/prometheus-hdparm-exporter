@@ -1,0 +1,10 @@
+[Unit]
+Description=Export hdparm stats for Prometheus
+After=syslog.target network.target
+
+[Service]
+Type=exec
+ExecStart=/opt/prometheus_hdparm_exporter.py "" 8000
+
+[Install]
+WantedBy=multi-user.target
