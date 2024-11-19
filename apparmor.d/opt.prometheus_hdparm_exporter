@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2024 Agathe Porte
+#
+# SPDX-License-Identifier: GPL-3.0-only
+
+include <tunables/global>
+
+# vim:syntax=apparmor
+# AppArmor policy for prometheus_hdparm_exporter.py
+
+/opt/prometheus_hdparm_exporter.py {
+  include <abstractions/base>
+  include <abstractions/python>
+
+  # python3
+  /usr/bin/python3.12 mrix,
+  /etc/ld.so.cache r,
+  /opt/prometheus_hdparm_exporter.py r,
+  owner /etc/host.conf r,
+  owner /etc/hosts r,
+  owner /etc/nsswitch.conf r,
+  owner /opt/ r,
+  /run/systemd/resolve/stub-resolv.conf r,
+
+  # lsblk
+  /usr/bin/lsblk mrix,
+  /etc/passwd r,
+  /sys/** r,
+
+  # hdparm
+  /usr/sbin/hdparm mrux,
+}

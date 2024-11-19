@@ -60,17 +60,15 @@ This repository is a full Python package. It will create the
 `prometheus-hdparm-exporter` binary in the PATH upon install:
 
 ```
-pip install git+https://github.com/gagath/prometheus-hdparm-exporter
-```
-
-### Manual
-
-Alternatively, if you do not want to use a Python package manager, the code
-fits a single file `main.py` and can easily be distributed on hosts manually:
-
-```
 curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/heads/main/src/prometheus_hdparm_exporter/main.py \
-    -o prometheus_hdparm_exporter.py
+    -o /opt/prometheus_hdparm_exporter.py
+```
+
+If you want to install the AppArmor configuration:
+
+```
+curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/heads/main/apparmor.d/opt.prometheus_hdparm_exporter \
+    -o /etc/apparmor.d/opt.prometheus_hdparm_exporter
 ```
 
 ## Grafana configuration
