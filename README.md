@@ -54,10 +54,8 @@ Status values:
 
 ## Install
 
-### Using pip
-
-This repository is a full Python package. It will create the
-`prometheus-hdparm-exporter` binary in the PATH upon install:
+The code fits a single file `main.py` and can easily be distributed on hosts
+manually:
 
 ```
 curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/heads/main/src/prometheus_hdparm_exporter/main.py \
