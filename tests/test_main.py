@@ -38,7 +38,7 @@ def test_format_prometheus_disk_power_status():
             ("/dev/sda", "standby"),
             epoch,
         )
-        == 'hdparm_disk_power_status{disk="/dev/sda",status="standby"} 1 42'
+        == 'hdparm_disk_power_status{disk="/dev/sda",status="standby"} 1 42000'
     )
 
     assert (
@@ -46,5 +46,5 @@ def test_format_prometheus_disk_power_status():
             ("/dev/sda", "active/idle"),
             epoch,
         )
-        == 'hdparm_disk_power_status{disk="/dev/sda",status="active/idle"} 1 42'
+        == 'hdparm_disk_power_status{disk="/dev/sda",status="active/idle"} 1 42000'
     )

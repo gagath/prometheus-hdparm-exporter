@@ -49,7 +49,7 @@ def format_prometheus_disk_power_status(
 ) -> str:
     """Format disk status to Prometheus line."""
     disk, status = power_status
-    timestamp = int(time.timestamp())
+    timestamp = int(time.timestamp() * 1000.0)
     return (
         "hdparm_disk_power_status{"
         f'disk="{disk}",'
