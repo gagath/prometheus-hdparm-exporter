@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2024 Agathe Porte <microjoe@microjoe.org>
 #
 # SPDX-License-Identifier: GPL-3.0-only
