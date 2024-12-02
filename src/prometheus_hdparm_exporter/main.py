@@ -79,7 +79,7 @@ def print_failed_process(process):
 def send_internal_error(start_response, e):
     """Send an HTTP 500 Internal Server Error to the user."""
     print(e)
-    start_response("500 Internal Server Error", TEXT_HEADERS)
+    start_response("500 Internal Server Error", copy(TEXT_HEADERS))
     return utf8(str(e), "See server logs for additional details.")
 
 
@@ -144,7 +144,7 @@ def application(_, start_response) -> list[bytes]:
 
     response = "\n".join([format_prometheus_disk_power_status(s) for s in status])
 
-    start_response("200 OK", TEXT_HEADERS)
+    start_response("200 OK", copy(TEXT_HEADERS))
 
     return utf8(response)
 
