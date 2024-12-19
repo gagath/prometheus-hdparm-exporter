@@ -78,12 +78,20 @@ curl https://raw.githubusercontent.com/gagath/prometheus-hdparm-exporter/refs/he
 
 ## Grafana configuration
 
+The `hdparm_disk_power_status` metric must be queried as a range table.
+
+![Grafana query configuration: choose the "Table" format](./docs/grafana_query.png)
+
 You will need to do a bit of transformations of the `hdparm_disk_power_status`
 field in Granafa to obtain the *State timeline* output showed in the
 introduction:
 
 ![Grafana transform data configuration: first grouping to matrix on disk
 column, then convert field type Time\\disk to Time](./docs/granafa_transform.png)
+
+Recommended value mappings:
+
+![Grafana value mappings: Map the expected hdparm outputs to display appropriately.](./docs/grafana_value_mappings.png)
 
 ## Known limitations
 
