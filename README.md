@@ -4,6 +4,8 @@ SPDX-FileCopyrightText: 2024 Agathe Porte <microjoe@microjoe.org>
 SPDX-License-Identifier: GPL-3.0-only
 -->
 
+<p style="text-align:center"><img src="docs/logo.gif" alt="logo" /></div>
+
 # prometheus-hdparm-exporter
 
 prometheus-hdparm-exporter is a zero-dependency Python program that will export
