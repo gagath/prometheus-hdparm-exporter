@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2024 Agathe Porte <microjoe@microjoe.org>
 SPDX-License-Identifier: GPL-3.0-only
 -->
 
-<p style="text-align:center"><img src="docs/logo.gif" alt="logo" width="75%" /></div>
+<img src="docs/logo.gif" alt="logo" style="display:block;float:none;margin-left:auto;margin-right:auto;width:75%"/>
 
 # prometheus-hdparm-exporter
 
