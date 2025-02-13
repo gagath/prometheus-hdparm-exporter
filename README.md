@@ -22,7 +22,7 @@ This way we can monitor disk spin status to be sure that the spin policy works
 correctly: energy is saved and noise is reduced when not in use, and disks
 do not spin up and down too often to prevent wear.
 
-![Example grafana output graph](./docs/granafa_hdparm.png)
+<p align="center"><img src="docs/granafa_hdparm.png" alt="Example grafana output graph" /></p>
 
 The above shows disks in a ZFS pool spinning up after trying to access the
 filesystem.
